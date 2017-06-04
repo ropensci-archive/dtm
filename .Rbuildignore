@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^inst$
+^src/readme.txt$
+^src/.*\.a$
+^src/.*\.o$
+^src/main$
+^src/a.out.dSYM$
+^.travis.yml$
+^readme.md$
+^appveyor\.yml$

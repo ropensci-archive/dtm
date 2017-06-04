@@ -1,0 +1,27 @@
+PKG_CPPFLAGS=-I./gflags
+
+INSTDIR=../inst/bin${R_ARCH}
+
+LIBDTM = \
+	dtm/data.o \
+	dtm/gsl-wrappers.o \
+	dtm/lda-seq.o \
+	dtm/lda.o \
+	dtm/main.o \
+	dtm/param.o \
+	dtm/params.o \
+	dtm/ss-lm.o \
+	dtm/util.o \
+	gflags/gflags.o \
+	gflags/gflags_reporting.o \
+	gflags/gflags_completions.o
+
+all: clean main
+
+main: $(LIBDTM)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -o main $(LIBDTM) -L/usr/local/lib -lgsl -lm -lgslcblas
+	mkdir -p $(INSTDIR)
+	cp -f main $(INSTDIR)
+
+clean:
+	rm -f $(LIBDTM) main
