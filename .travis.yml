@@ -21,7 +21,8 @@ matrix:
 addons:
   apt:
     packages:
-      - libgsl-dev
+      - libgsl0-dev
+      - libapparmor-dev
       - valgrind
 
 r_github_packages:
